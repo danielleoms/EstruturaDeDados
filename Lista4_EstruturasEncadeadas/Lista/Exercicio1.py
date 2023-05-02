@@ -1,7 +1,5 @@
 #1) Implemente a função remove utilizando a função busca. 
 
-
-
 def remove(lista, valor):
     if lista is None:  # caso a lista esteja vazia
         return lista
