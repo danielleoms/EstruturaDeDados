@@ -15,40 +15,40 @@ Uma lista duplamente encadeada oferece algumas vantagens em relação a uma list
 
 Abaixo está um exemplo de implementação de uma lista duplamente encadeada em Python:
 
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.prev = None
-        self.next = None
+    class Node:
+        def __init__(self, data):
+            self.data = data
+            self.prev = None
+            self.next = None
 
-class DoublyLinkedList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
+    class DoublyLinkedList:
+        def __init__(self):
+            self.head = None
+            self.tail = None
 
-    def append(self, data):
-        new_node = Node(data)
-        if self.head is None:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            new_node.prev = self.tail
-            self.tail.next = new_node
-            self.tail = new_node
+        def append(self, data):
+            new_node = Node(data)
+            if self.head is None:
+                self.head = new_node
+                self.tail = new_node
+            else:
+                new_node.prev = self.tail
+                self.tail.next = new_node
+                self.tail = new_node
 
-    def delete(self, data):
-        current = self.head
-        while current:
-            if current.data == data:
-                if current.prev is None:
-                    self.head = current.next
-                else:
-                    current.prev.next = current.next
-                if current.next is None:
-                    self.tail = current.prev
-                else:
-                    current.next.prev = current.prev
-                return True
+        def delete(self, data):
+            current = self.head
+            while current:
+                if current.data == data:
+                    if current.prev is None:
+                        self.head = current.next
+                    else:
+                        current.prev.next = current.next
+                    if current.next is None:
+                        self.tail = current.prev
+                    else:
+                        current.next.prev = current.prev
+                    return True
             current = current.next
         return False
 
