@@ -5,12 +5,11 @@
 def fatorial_duplo(n: int) -> int:
     if n == 1:
         return 1
-    return n * fatorial_duplo(n - 2)
-
-
+    else:
+        return n * fatorial_duplo(n - 2)
 if __name__ == "__main__":
-    while True:
-        n = int(input("Digite um número ímpar: "))
-        if n % 2 != 0:
-            break
-    print(f"O fatorial duplo de {n} é {fatorial_duplo(n)}")
+    n = int(input("Digite um número ímpar: "))
+    if n % 2 == 0:
+        print("Digite um número ímpar!")
+    else:
+        print(fatorial_duplo(n))
