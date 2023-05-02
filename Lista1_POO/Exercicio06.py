@@ -1,6 +1,6 @@
-# Classe TV
-
-# Nesse programa eu considerei que os canais vão de 0 a 200 e o volume de 0 a 100
+# Classe TV: Faça um programa que simule um televisor criando-o como um objeto.
+# O usuário deve ser capaz de informar o número do canal e aumentar ou diminuir o volume.
+# Certifique-se de que o número do canal e o nível do volume permanecem dentro de faixas válidas.
 
 class TV:
     def __init__(self, canal=0, volume=0):
@@ -20,4 +20,3 @@ class TV:
     def diminuir_volume(self, novo_volume):
         if novo_volume < self.volume and 0 < novo_volume < 100:
             self.volume = novo_volume
-
