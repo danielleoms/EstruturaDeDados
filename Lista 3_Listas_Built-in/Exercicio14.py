@@ -1,4 +1,4 @@
-# Programa que faça 5 perguntas para uma pessoa sobre um crime
+# 14) Programa que faça 5 perguntas para uma pessoa sobre um crime
 
 perguntas = ["Telefonou para a vítima? [S/N]",
              "Esteve no local do crime? [S/N]",
