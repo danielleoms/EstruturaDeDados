@@ -14,3 +14,4 @@ if __name__ == "__main__":
         if n % 2 == 0:
             break
     contagem_progressiva_recursiva(0, n)
+    print(contagem_progressiva_recursiva)
