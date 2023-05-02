@@ -14,3 +14,5 @@ def TPilha(vetor):
                 pilha.pop()
     while pilha:
         print(pilha.pop())
+vetor = [2, 5, 4, 3, 6, 8, 1, 7, 10, 12, 11, 13, 9, 14, 16]
+TPilha(vetor)
