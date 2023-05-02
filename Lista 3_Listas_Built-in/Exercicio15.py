@@ -1,4 +1,4 @@
-"""Faça um programa que leia um número indeterminado de valores, correspondentes a notas, encerrando a entrada de dados quando for informado um valor igual a -1 (que não deve ser armazenado). Após esta entrada de dados, faça:
+""" 15) Faça um programa que leia um número indeterminado de valores, correspondentes a notas, encerrando a entrada de dados quando for informado um valor igual a -1 (que não deve ser armazenado). Após esta entrada de dados, faça:
 Mostre a quantidade de valores que foram lidos;
 Exiba todos os valores na ordem em que foram informados, um ao lado do outro;
 Exiba todos os valores na ordem inversa à que foram informados, um abaixo do outro;
