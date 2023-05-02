@@ -23,4 +23,3 @@ for numero in pares:
 print("\nNúmeros ímpares:", end=" ")
 for numero in impares:
     print(numero, end=" ")
-
