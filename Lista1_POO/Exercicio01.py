@@ -9,8 +9,8 @@ class Bola:
         self.circunferencia = circunferencia
         self.material = material
 
-    def mostra_cor(self):  # get
+    def mostra_cor(self): 
         return self.cor
 
-    def troca_cor(self, novacor):  # set
+    def troca_cor(self, novacor): 
         self.cor = novacor
