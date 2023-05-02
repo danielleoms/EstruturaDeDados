@@ -1,21 +1,29 @@
-# Faça um programa que receba a temperatura média de cada mês do ano e armazene-as em uma lista.
+# 13) Faça um programa que receba a temperatura média de cada mês do ano e armazene-as em uma lista.
 # Após isto, calcule a média anual das temperaturas e mostre todas as temperaturas acima da média anual,
 # e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro, . . . ).
 
-media_de_temperaturas = []
-soma_das_temp = 0
+meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+temperaturas = []
+soma_temperaturas = 0
 
+# Recebe a temperatura média de cada mês e adiciona na lista de temperaturas
 for i in range(12):
-    temp = float(input(f"Média de temperatura do mês {i+1}: "))
-    soma_das_temp += temp
-    media_de_temperaturas.append(temp)
+    temperatura = float(input(f"Digite a temperatura média de {meses[i]}: "))
+    temperaturas.append(temperatura)
+    soma_temperaturas += temperatura
 
-media_de_temperaturas_anual = soma_das_temp/12
-print(f"Média de temperatura anual: {media_de_temperaturas_anual:.2f}ºC")
+# Calcula a média anual das temperaturas
+media_anual = soma_temperaturas / 12
 
-print("Meses acima da média de temperatura anual:")
-meses = {1:'Janeiro', 2:'Fevereiro', 3:'Março', 4:'Abril', 5:'Maio', 6:'Junho', 7:'Julho', 8:'Agosto',
-        9:'Setembro', 10:'Outubro', 11:'Novembro', 12:'Dezembro'}
-for i, media in enumerate(media_de_temperaturas):
-    if media > media_de_temperaturas_anual:
-        print(f"{i + 1} - {meses[i+1]}: {media}ºC") 
+# Armazena os índices e valores das temperaturas acima da média anual em uma nova lista
+acima_da_media = []
+for i in range(12):
+    if temperaturas[i] > media_anual:
+        acima_da_media.append((i, temperaturas[i]))
+
+# Imprime as temperaturas acima da média anual e o mês correspondente
+print("Temperaturas acima da média anual:")
+for i in range(len(acima_da_media)):
+    mes = meses[acima_da_media[i][0]]
+    temperatura = acima_da_media[i][1]
+    print(f"{mes}: {temperatura:.2f}")
