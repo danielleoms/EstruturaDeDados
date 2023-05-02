@@ -1,4 +1,4 @@
-# Faça um Programa que leia um vetor de 5 números inteiros e mostre-os
+# 1) Faça um Programa que leia um vetor de 5 números inteiros e mostre-os
 import random
 
 lista = []
