@@ -1,4 +1,4 @@
-# Classe Funcionário melhorado
+# Aprimore o exercício 13
 
 class Funcionario:
     def __init__(self, nome, salario):
