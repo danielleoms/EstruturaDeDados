@@ -14,18 +14,14 @@ while True:
     if nome == "":
         break
     nomes.append(nome)
-    saltos.append(float(input("Primeiro Salto:")))
-    saltos.append(float(input("Segundo Salto:")))
-    saltos.append(float(input("Terceiro Salto:")))
-    saltos.append(float(input("Quarto Salto:")))
-    saltos.append(float(input("Quinto Salto:")))
+    saltos.append(float(input("Primeiro Salto: ")))
+    saltos.append(float(input("Segundo Salto: ")))
+    saltos.append(float(input("Terceiro Salto: ")))
+    saltos.append(float(input("Quarto Salto: ")))
+    saltos.append(float(input("Quinto Salto: ")))
 
 print("Resultado final: ")
 print(f"Atleta: {nomes[0]}")
-print(f"Saltos: ", end="")
-for i, salto in enumerate(saltos):
-    if i != (len(saltos)-1):
-        print(f"{salto} - ", end="")
-    else:
-        print(salto)
+saltos_str = " - ".join([str(salto) for salto in saltos])
+print(f"Saltos: {saltos_str}")
 print(f"Média dos saltos: {np.mean(saltos)} m")
