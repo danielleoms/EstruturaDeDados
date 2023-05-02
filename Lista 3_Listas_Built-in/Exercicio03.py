@@ -1,4 +1,4 @@
-# Faça um Programa que leia 4 notas, mostre as notas e a média na tela.
+# 3) Faça um Programa que leia 4 notas, mostre as notas e a média na tela.
 
 notas = []
 soma = 0
@@ -14,5 +14,3 @@ for i in notas:
     print(i, end=" ")
 
 print(f"\nA média das notas é: {sum(notas)/len(notas)}")
-
-
