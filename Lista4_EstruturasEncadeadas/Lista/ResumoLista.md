@@ -4,6 +4,55 @@
 #### Pergunta: O que é uma lista encadeada?
 Uma lista encadeada é uma estrutura de dados linear na qual cada elemento (nó) contém um valor e um ponteiro (referência) para o próximo nó da lista. Esses nós são organizados em sequência, formando a lista. O primeiro nó da lista é chamado de cabeça (head) e o último nó é chamado de cauda (tail) e aponta para um nó vazio ou nulo. A lista encadeada permite inserir e remover elementos de forma eficiente, pois a inserção e remoção ocorrem apenas modificando os ponteiros que ligam os nós.
 
+
+#### Pergunta: O que é uma lista duplamente encadeada?
+
+Uma lista duplamente encadeada (ou lista duplamente ligada) é uma estrutura de dados que permite armazenar uma sequência de elementos em que cada elemento é ligado aos seus elementos adjacentes por meio de dois ponteiros: um para o elemento anterior e outro para o elemento seguinte. Esses ponteiros permitem que a lista seja percorrida tanto em direção ao início quanto em direção ao fim.
+
+Cada elemento da lista, conhecido como nó, contém um campo de dados e dois ponteiros: um para o nó anterior e outro para o próximo nó. O primeiro nó da lista é chamado de cabeça e o último nó é chamado de cauda.
+
+Uma lista duplamente encadeada oferece algumas vantagens em relação a uma lista simplesmente encadeada, como a capacidade de percorrer a lista em ambas as direções e a facilidade de remoção de um nó.
+
+Abaixo está um exemplo de implementação de uma lista duplamente encadeada em Python:
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.prev = self.tail
+            self.tail.next = new_node
+            self.tail = new_node
+
+    def delete(self, data):
+        current = self.head
+        while current:
+            if current.data == data:
+                if current.prev is None:
+                    self.head = current.next
+                else:
+                    current.prev.next = current.next
+                if current.next is None:
+                    self.tail = current.prev
+                else:
+                    current.next.prev = current.prev
+                return True
+            current = current.next
+        return False
+
+
 #### Pergunta: O que é um nó em uma lista encadeada?
 Em uma lista encadeada, um nó é uma estrutura de dados que contém dois elementos principais: um valor (também chamado de dado ou informação) e um ponteiro que aponta para o próximo nó na lista. O valor do nó armazena a informação que se deseja guardar e o ponteiro aponta para o próximo nó da lista ou pode ser nulo se o nó for o último da lista encadeada. A estrutura de nó é utilizada para construir uma lista encadeada, que é uma estrutura de dados dinâmica que permite armazenar e manipular uma sequência de elementos de maneira flexível.
 
