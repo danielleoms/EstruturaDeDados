@@ -10,4 +10,3 @@ if __name__ == "__main__":
     n = int(input("Digite um número: "))
     fat = fatorial(n)
     print(f"O fatorial de {n} é {fat}")
-
