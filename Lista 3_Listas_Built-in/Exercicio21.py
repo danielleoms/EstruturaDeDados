@@ -7,32 +7,34 @@ uma distância de 1000 quilômetros e quanto isto custará, considerando um que 
 Abaixo segue uma tela de exemplo. O disposição das informações deve ser o mais próxima possível ao exemplo.
 Os dados são fictícios e podem mudar a cada execução do programa."""
 
-def litros_distancia(km, distancia=1000):
-    return distancia/km
+def calcular_litros(distancia, consumo):
+    return distancia / consumo
 
 modelos = []
 consumo = []
 litros = []
 
 print("Comparativo de Consumo de Combustível")
-for i in range(1,6):
+
+for i in range(1, 6):
     print(f"Veículo {i}")
     modelos.append(str(input("Nome: ")))
-    consumo.append(float(input("Km por litro: ")))
-
-for c in consumo:
-    litros.append(litros_distancia(c))
+    while True:
+        consumo_carro = float(input("Km por litro: "))
+        if consumo_carro > 0:
+            break
+        print("Valor inválido. Por favor, informe um valor maior que zero.")
+    consumo.append(consumo_carro)
 
 print("\nRelatório final:")
+
+print(f"{'Nº':<2} - {'Modelo':<10} - {'Km/L':>5} - {'Litros (1000 km)':>15} - {'Custo (1000 km)':>15}")
 cont = 1
-for m, c, l in zip(modelos, consumo, litros):
-    print(f"{cont} - {m:<10} - {c:>5} - {l:.2f} litros - R${2.25 * l:.2f}")
+
+for m, c in zip(modelos, consumo):
+    litros_carro = calcular_litros(1000, c)
+    print(f"{cont:<2} - {m:<10} - {c:>5} - {litros_carro:>15.2f} - R${litros_carro * 2.25:>14.2f}")
     cont += 1
 
-for m, l in zip(modelos, litros):
-    if l == min(litros):
-        print(f"\nO menor consumo é do {m}")
-        
-    
-
-
+indice_menor_consumo = consumo.index(min(consumo))
+print(f"\nO menor consumo é do {modelos[indice_menor_consumo]}") 
