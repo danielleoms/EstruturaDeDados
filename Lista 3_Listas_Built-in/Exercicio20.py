@@ -33,9 +33,3 @@ print(f"\nForam processados {len(salarios)} colaboradores")
 print(f"Total gasto com abonos: R${sum(abonos):.2f}")
 print(f"Valor mínimo pago a {valor_minimo} colaboradores")
 print(f"Maior valor de abono pago: R${max(abonos):.2f}")
-
-    
-    
-
-
-
