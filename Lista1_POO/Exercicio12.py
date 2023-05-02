@@ -26,7 +26,7 @@ class ContaInvestimento(Conta):
         self.saldo += self.saldo * (self.taxaJuros / 100)
 
 
-conta2 = ContaInvestimento(1233, 'ana', 1000, 10)
+conta2 = ContaInvestimento(9985, 'dani', 100, 50)
 conta2.adicione_juros()
 conta2.adicione_juros()
 conta2.adicione_juros()
