@@ -11,4 +11,3 @@ def recursive_countup_recursive(start: int, finish: int) -> int:
 if __name__ == "__main__":
     n = int(input("Digite um número: "))
     recursive_countup_recursive(0, n)
-    print(recursive_countup_recursive)
