@@ -1,13 +1,30 @@
-# 1) Escrever uma função que receba como parâmetro uma pilha. A função deve retornar o maior elemento da pilha.
-
-def maior_elemento(pilha):
-    maior = None
-    # Percorre toda a pilha
-    while not pilha.esta_vazia():
-        # Obtém o valor do topo da pilha
-        topo = pilha.desempilha()
-        # Verifica se é o maior valor encontrado até agora
-        if maior is None or topo > maior:
-            maior = topo
-    # Retorna o maior valor encontrado
-    return maior
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class Fila:
+    def __init__(self):
+        self.front = None  # aponta para o primeiro elemento da fila
+        self.rear = None   # aponta para o último elemento da fila
+        
+    def push(self, data):
+        '''Insere um novo nó no final da fila.'''
+        new_node = Node(data)  # cria um novo nó com o dado a ser inserido
+        if self.front is None:  # caso a fila esteja vazia
+            self.front = new_node  # o novo nó será o primeiro e último elemento da fila
+            self.rear = new_node
+        else:
+            self.rear.next = new_node  # atualiza o ponteiro do último nó para o novo nó
+            self.rear = new_node  # atualiza o ponteiro do último nó para o novo nó
+            
+    def pop(self):
+        '''Remove o primeiro elemento da fila.'''
+        if self.front is None:  # caso a fila esteja vazia, não há elementos a serem removidos
+            return None
+        else:
+            removed_node = self.front  # armazena o nó a ser removido
+            self.front = self.front.next  # atualiza o ponteiro do primeiro nó para o próximo nó
+            if self.front is None:  # caso a fila tenha apenas um elemento, ao removê-lo, a fila ficará vazia
+                self.rear = None
+            return removed_node.data
