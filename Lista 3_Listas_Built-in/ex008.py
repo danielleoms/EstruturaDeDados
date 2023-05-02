@@ -1,4 +1,4 @@
-# Faça um Programa que peça a idade e a altura de 5 pessoas,
+# 8) Faça um Programa que peça a idade e a altura de 5 pessoas,
 # armazene cada informação no seu respectivo vetor. Imprima a idade e a altura na ordem inversa a ordem lida.
 
 pessoas = 5
@@ -16,5 +16,3 @@ for i, pessoa in enumerate(dados):
             print(f"{dado} m e ", end="")
         else:
             print(f"{dado} anos")
-        
-        
