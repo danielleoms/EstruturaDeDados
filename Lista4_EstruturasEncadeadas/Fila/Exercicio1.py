@@ -1,3 +1,9 @@
+'''1. Implemente uma fila dinâmica contendo todas as funcionalidades de uma fila padrão. Para isso, resolvar:
+–Crie um nó padrão da fila.
+–Crie uma função de inicialização da fila vazia
+–Crie uma função push que cria e insere um novo nó para o final da fila.
+–Crie uma função pop que remove o primeiro elemento da fila.'''
+
 class Node:
     def __init__(self, data):
         self.data = data
