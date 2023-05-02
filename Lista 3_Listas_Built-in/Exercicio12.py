@@ -1,9 +1,6 @@
-# Foram anotadas as idades e alturas de 30 alunos. Faça um Programa que determine quantos alunos com mais de 13 anos
+# 12) Foram anotadas as idades e alturas de 30 alunos. Faça um Programa que determine quantos alunos com mais de 13 anos
 # possuem altura inferior à média de altura desses alunos.
 
-# Duas formas:
-
-# 1ª forma (sem pandas e somente com listas):
 
 '''Leitura da idade e altura dos alunos:
 alunos = [[] for i in range(30)]
@@ -27,33 +24,4 @@ for i, termo in enumerate(alunos):
         alunos_procurados += 1
 
 print(f"O número de alunos maiores de 13 anos e com altura inferior à média são: {alunos_procurados} alunos")
-        
-
-
-# 2ª forma (com pandas e dicionarios):
-
-import pandas as pd
-
-'''Leitura da idade e altura dos alunos:
-alunos = {'idade': [], 'altura': []}
-for i in range(30):
-    alunos['idade'].append(int(input("Idade: ")))
-    alunos['altura'].append(float(input("Altura: ")))
-'''
-
-alunos = {'idade': [21,22,23,24,25,26,27,28,29,30,21,22,23,24,25,26,27,28,29,30, 21,22,23,24,25,26,27,28,29,30], 
-          'altura': [1.8, 1.8, 1.7, 1.8, 1.7, 1.8, 1.7, 1.8, 1.8, 1.8, 1.8, 1.8, 1.7, 1.8, 1.7, 1.8, 1.7, 1.8, 1.8, 1.8,
-                     1.8, 1.8, 1.7, 1.8, 1.7, 1.8, 1.7, 1.8, 1.8, 1.8]}
-
-
-df = pd.DataFrame(alunos)
-
-media_de_altura = df['altura'].mean()
-
-alunos_procurados = df.loc[(df['idade'] >= 13) & (df['altura'] < media_de_altura)]
-
-print(f"O número de alunos maiores de 13 anos e com altura inferior à média são: {len(alunos_procurados)} alunos")
-
-
-
         
