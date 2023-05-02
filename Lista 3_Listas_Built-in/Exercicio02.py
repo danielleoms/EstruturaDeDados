@@ -1,4 +1,4 @@
-# Faça um Programa que leia um vetor de 10 números reais e mostre-os na ordem inversa.
+# 2) Faça um Programa que leia um vetor de 10 números reais e mostre-os na ordem inversa.
 
 import random
 lista = []
@@ -16,6 +16,3 @@ lista.reverse()
 print("\nA lista invertida é: ", end="")
 for e in lista:
     print(e, end=" ")
-    
-
-    
