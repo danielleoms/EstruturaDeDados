@@ -1,0 +1,10 @@
+
+O código que enviei é uma implementação em Python de uma função para somar todos os valores de uma fila de forma recursiva. A função somaLista recebe uma instância da classe Fila como parâmetro e retorna a soma dos valores dos elementos contidos na fila.
+
+A classe Nodo é utilizada para representar um nodo em uma lista encadeada, que é a estrutura usada para implementar a fila. Cada nodo contém um dado e uma referência para o próximo nodo na lista.
+
+A classe Fila é uma implementação de uma fila usando uma estrutura encadeada. Ela contém referências para o primeiro e o último nodo da fila. A inserção de um elemento é feita no final da fila, através do método push, e a remoção do primeiro elemento é feita através do método pop.
+
+A função somaLista faz uso da recursão para somar todos os valores dos elementos contidos na fila. Ela verifica se a fila está vazia, se sim, retorna 0. Caso contrário, ela remove o primeiro elemento da fila, soma o seu valor com o retorno da chamada recursiva da função passando a fila atualizada e retorna o resultado da soma.
+
+Essa implementação permite que sejam adicionados elementos a qualquer momento na fila e, ao chamar a função somaLista, a soma de todos os elementos será feita de forma recursiva e eficiente.
