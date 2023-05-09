@@ -51,4 +51,3 @@ O código acima cria uma instância da classe Stack, adiciona alguns elementos �
 
 Pilha original: [3, 3, 3, 6, 6, 9, 10, 12]
 Pilha sem duplicatas: [3, 6, 9, 10, 12]
-
