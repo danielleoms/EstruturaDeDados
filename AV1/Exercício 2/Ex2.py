@@ -52,12 +52,23 @@ class ListaEncadeada:
 
 
 lista = ListaEncadeada()
-for i in range(15):
-    lista.insere_no_inicio(i)
+
+lista.insere_no_inicio(3)
+lista.insere_no_inicio(5)
+lista.insere_no_inicio(6)
+lista.insere_no_inicio(8)
+lista.insere_no_inicio(10)
+lista.insere_no_inicio(12)
 print("Lista:", lista)
 
-print("====*====" * 15)
-print("                                                     Removendo elementos")
-print("====*====" * 15)
-lista.remove_range(3, 9)
+inicio = 2
+fim = 7
+lista.remove_range(inicio, fim)
 print("Lista após a remoção:", lista)
+
+#Relatório#
+"""
+- Foi adicionado  o método "remove_range" que recebeu os parâmetros "inicio" e "fim" que definem
+o range de valores a serem removidos. Em seguida, foi percorrida a lista e verificado se o valor do nodo está dentro do range especificado.
+Caso esteja, o método "remove" é utilizado para remover o valor da lista. Por fim, é impressa a lista após a remoção.
+"""
