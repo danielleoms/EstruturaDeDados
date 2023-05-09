@@ -1,42 +1,49 @@
 
-#Escreva um Método em python para remover elementos repetidos de uma pilha
+#Escreva um Método em python para remover elementos repetidos de uma pilha#
 
-class Stack:
+class Pilha:
     def __init__(self):
-        self.items = []
+        self.itens = []
 
-    def push(self, item):
-        self.items.append(item)
+    def empilhar(self, item):
+        self.itens.append(item)
 
-    def pop(self):
-        return self.items.pop()
+    def desempilhar(self):
+        return self.itens.pop()
 
-    def is_empty(self):
-        return len(self.items) == 0
+    def esta_vazia(self):
+        return len(self.itens) == 0
 
-    def remove_duplicates(self):
-        seen_items = set()
-        result = []
-        while not self.is_empty():
-            item = self.pop()
-            if item not in seen_items:
-                result.append(item)
-                seen_items.add(item)
-        result.reverse()
-        self.items = result
+    def remover_duplicatas(self):
+        itens_vistos = set()
+        resultado = []
+        while not self.esta_vazia():
+            item = self.desempilhar()
+            if item not in itens_vistos:
+                resultado.append(item)
+                itens_vistos.add(item)
+        resultado.reverse()
+        self.itens = resultado
 
 
-s = Stack()
-s.push(3)
-s.push(3)
-s.push(3)
-s.push(6)
-s.push(6)
-s.push(9)
-s.push(10)
-s.push(12)
+s = Pilha()
+s.empilhar(3)
+s.empilhar(3)
+s.empilhar(3)
+s.empilhar(6)
+s.empilhar(6)
+s.empilhar(9)
+s.empilhar(10)
+s.empilhar(12)
 
-print("Pilha original:", s.items)
-s.remove_duplicates()
-print("Pilha sem duplicatas:", s.items)
+print("Pilha original:", s.itens)
+s.remover_duplicatas()
+print("Pilha sem duplicatas:", s.itens)
 
+#Relatório#
+"""
+- O código foi reescrito utilizando uma estrutura de dados de pilha
+- O método remover_duplicatas usa um conjunto (set) para rastrear quais itens já foram vistos anteriormente na pilha.
+Em seguida, o método itera sobre cada item na pilha original e adiciona o item à pilha de resultado
+somente se ele ainda não tiver sido visto.Por fim, a pilha de resultado é invertida para que os elementos 
+apareçam na ordem correta e a pilha original é atualizada com os elementos não duplicados."""
