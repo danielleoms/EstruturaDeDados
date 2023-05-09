@@ -1,0 +1,54 @@
+Para reescrever o código para um método, precisamos encapsular a função remove_duplicates em uma classe. Aqui está uma possível implementação:
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def remove_duplicates(self):
+        seen_items = set()
+        result = []
+        while not self.is_empty():
+            item = self.pop()
+            if item not in seen_items:
+                result.append(item)
+                seen_items.add(item)
+        result.reverse()
+        self.items = result
+
+
+
+A classe Stack representa uma pilha, com os métodos usuais push, pop e is_empty. Além disso, acrescentamos o método remove_duplicates, que é uma versão modificada da função original.
+
+O método remove_duplicates usa um conjunto (set) para rastrear quais itens já foram vistos anteriormente na pilha. Em seguida, o método itera sobre cada item na pilha original e adiciona o item à pilha de resultado somente se ele ainda não tiver sido visto. Por fim, a pilha de resultado é invertida para que os elementos apareçam na ordem correta e a pilha original é atualizada com os elementos não duplicados.
+
+Aqui está um exemplo de uso da classe Stack e do método remove_duplicates:
+
+s = Stack()
+s.push(3)
+s.push(3)
+s.push(3)
+s.push(6)
+s.push(6)
+s.push(9)
+s.push(10)
+s.push(12)
+
+print("Pilha original:", s.items)
+s.remove_duplicates()
+print("Pilha sem duplicatas:", s.items)
+
+
+O código acima cria uma instância da classe Stack, adiciona alguns elementos à pilha e usa o método remove_duplicates para removê-los. A saída deve ser:
+
+Pilha original: [3, 3, 3, 6, 6, 9, 10, 12]
+Pilha sem duplicatas: [3, 6, 9, 10, 12]
+
